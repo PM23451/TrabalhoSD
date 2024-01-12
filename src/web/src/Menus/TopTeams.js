@@ -6,15 +6,18 @@ const DEMO_TEAMS = [
     {"team": "Manchester City", country: "UK"},
     {"team": "Chelsea", country: "UK"},
     {"team": "Tottenham", country: "UK"},
-    {"team": "Fulham", country: "UK"},
+    {"team": "Arsenal", country: "UK"},
+    {"team": "Liverpool", country: "UK"},
 
     {"team": "Sporting", country: "Portugal"},
     {"team": "Porto", country: "Portugal"},
     {"team": "Benfica", country: "Portugal"},
-    {"team": "Braga", country: "Portugal"},
+    {"team": "Arouca", country: "Portugal"},
+    {"team": "O Vitoria não é de certeza!", country: "Portugal"},
 
     {"team": "PSG", country: "France"},
     {"team": "Lyon", country: "France"},
+    {"team": "Monaco", country: "France"},
     {"team": "Olympique de Marseille", country: "France"}
 ];
 
