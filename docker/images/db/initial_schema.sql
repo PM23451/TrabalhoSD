@@ -8,3 +8,4 @@ CREATE TABLE public.teachers (
 
 INSERT INTO teachers(name, city) VALUES('Luís Teófilo', 'Porto');
 INSERT INTO teachers(name, city) VALUES('Ricardo Castro', 'Braga');
+
