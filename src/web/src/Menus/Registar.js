@@ -27,7 +27,7 @@ function Registar() {
 
         try {
             // Make a POST request to your backend API
-            const response = await fetch("http://localhost:18080/register", {
+            const response = await fetch("http://localhost:18080/adduser", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
