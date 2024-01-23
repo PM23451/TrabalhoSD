@@ -1,4 +1,5 @@
 import TopTeams from "../Menus/TopTeams";
+import Login from "../Menus/Login";
 
 const Sections = [
 
@@ -9,10 +10,18 @@ const Sections = [
     },
 
     {
+        id: "login",
+        label: "Login",
+        content: <Login/>
+    },
+
+    {
         id: "something-else",
         label: "Something Else",
         content: <h1>Something else - Work in progresss</h1>
     }
+
+
 
 ];
 
