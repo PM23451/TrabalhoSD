@@ -1,5 +1,6 @@
 import TopTeams from "../Menus/TopTeams";
 import Login from "../Menus/Login";
+import Registar from "../Menus/Registar";
 
 const Sections = [
 
@@ -13,6 +14,12 @@ const Sections = [
         id: "login",
         label: "Login",
         content: <Login/>
+    },
+
+    {
+        id: "registar",
+        label: "Registar",
+        content: <Registar/>
     },
 
     {

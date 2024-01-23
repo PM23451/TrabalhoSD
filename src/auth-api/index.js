@@ -11,12 +11,12 @@ app.get('/', async (req, res) => {
     try {
         //Insert um user
         /*await knex('users').insert({
-            username: 'user',
-            password: 'pass'
+            username: 'gui13',
+            password: '12345'
         });*/
 
-        const teachers = await knex.select('*').from('users');
-        res.json(teachers);
+        const user = await knex.select('*').from('users');
+        res.json(user);
     } catch (error) {
         console.error(error);
         res.status(500).send('Error retrieving data');
