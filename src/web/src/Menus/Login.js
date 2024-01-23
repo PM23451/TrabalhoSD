@@ -62,7 +62,7 @@ function Login() {
                 <Typography component="h1" variant="h5">
                     Login
                 </Typography>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleLogin}>
                     <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
                         <InputLabel htmlFor="username">Username</InputLabel>
                         <Input
