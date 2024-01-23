@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState } from "react";
 import {
     Box,
     Button,
@@ -12,40 +12,38 @@ import {
     Typography
 } from "@mui/material";
 
-//Login
-
-function Login() {
+function Registar() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [token, setToken] = useState("");
 
-    const handleLogin = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        try {
-            //Debugguer
+        // Prepare the data to be sent to the server
+        const data = {
+            username: username,
+            password: password,
+        };
 
-            console.log("user"+username);
-            console.log("pass"+password);
-            // Fazer a requisição para a API de login
-            const response = await fetch("http://localhost:18080/login", {
-                method: "POST", // ou "GET", dependendo da sua API
+        try {
+            // Make a POST request to your backend API
+            const response = await fetch("http://localhost:18080/register", {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ username, password }),
+                body: JSON.stringify(data),
             });
 
+            // Check if the request was successful (status code 200-299)
             if (response.ok) {
-                const data = await response.json();
-                setToken(data);
-                // Lógica para tratamento de sucesso, por exemplo, salvar token no estado ou redirecionar para outra página
+                console.log("Data sent successfully!");
+                // Optionally, you can redirect the user or perform other actions upon successful submission
             } else {
-                // Lógica para tratamento de erro
-                console.error("Erro ao fazer login");
+                console.error("Failed to send data to the server");
             }
         } catch (error) {
-            console.error("Erro ao fazer login:", error);
+            console.error("Error sending data to the server:", error);
         }
     };
 
@@ -60,11 +58,17 @@ function Login() {
                 }}
             >
                 <Typography component="h1" variant="h5">
-                    Login
+                    Registar
                 </Typography>
-                <form onSubmit={handleSubmit}>
+                <Box
+                    component="form"
+                    onSubmit={handleSubmit}
+                    sx={{ width: "100%", mt: 3 }}
+                >
                     <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
-                        <InputLabel htmlFor="username">Username</InputLabel>
+                        <InputLabel htmlFor="username" sx={{ color: "white" }}>
+                            Username
+                        </InputLabel>
                         <Input
                             id="username"
                             name="username"
@@ -72,10 +76,13 @@ function Login() {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             required
+                            sx={{ color: "white" }}
                         />
                     </FormControl>
                     <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
-                        <InputLabel htmlFor="password">Password</InputLabel>
+                        <InputLabel htmlFor="password" sx={{ color: "white" }}>
+                            Password
+                        </InputLabel>
                         <Input
                             id="password"
                             name="password"
@@ -83,6 +90,7 @@ function Login() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
+                            sx={{ color: "white" }}
                         />
                     </FormControl>
                     <Button
@@ -93,10 +101,10 @@ function Login() {
                     >
                         Submit
                     </Button>
-                </form>
+                </Box>
             </Box>
         </Container>
     );
 }
 
-export default Login;
+export default Registar;
