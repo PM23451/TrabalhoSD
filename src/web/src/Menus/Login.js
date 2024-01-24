@@ -95,6 +95,7 @@ function Login() {
                     </Button>
                 </form>
             </Box>
+            {token}
         </Container>
     );
 }
