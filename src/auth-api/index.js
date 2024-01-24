@@ -57,7 +57,7 @@ app.post('/login', async (req, res) => {
             // const token = jwt.sign({ username }, process.env.TOKEN_SECRET);
             //const token = "login feito com sucesso";
             //process.env.AUTH_JWT_SECRET
-            const token = jwt.sign({ username },"65b187c77dc34", { expiresIn: '1h' });
+            const token = jwt.sign({ username },"65b187c77dc34", { expiresIn: '1d' });
 
             // Converter em JSON e enviar
             const jsonToken = JSON.stringify(token);

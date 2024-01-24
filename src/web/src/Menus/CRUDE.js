@@ -14,7 +14,7 @@ import {
 
 //Login
 
-function Login() {
+function CRUDE() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState("");
@@ -99,4 +99,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default CRUDE;

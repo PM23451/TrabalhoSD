@@ -20,7 +20,12 @@ const Sections = [
         id: "registar",
         label: "Registar",
         content: <Registar/>
-    },
+    },/*
+    {
+        id: "crud",
+        label: "CRUD Crashes",
+        content: <CRUDE/>
+    },*/
 
     {
         id: "something-else",

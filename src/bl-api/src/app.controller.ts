@@ -14,5 +14,10 @@ export class AppController {
   getProfessores(): string {
     return this.appService.getProfessores();
   }
+
+  @Get('crashes')
+    getCrashes(): Promise<any[]> {
+        return this.appService.getCrashes();
+    }
   
 }
