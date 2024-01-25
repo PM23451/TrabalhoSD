@@ -15,8 +15,11 @@ export class AppService {
   }
 
   async getCrashes(): Promise<any[]> {
-    // Buscar do serviço de crashes
     const crashes = await this.crashesService.findAll();
     return crashes;
   }
+  insertCrash(): string {
+    return 'Crash';
+  }
+
 }

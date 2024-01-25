@@ -7,7 +7,7 @@ import { CrashesService } from "./crashes/crashes.service";
 @Module({
   imports: [TeachersModule],
   controllers: [AppController],
-  providers: [AppService, CrashesService], // Registre CrashesService como um provedor aqui
+  providers: [AppService, CrashesService],
 })
 export class AppModule {}
 
