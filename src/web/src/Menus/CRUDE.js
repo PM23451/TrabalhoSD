@@ -60,11 +60,11 @@ function CRUDE() {
                 }}
             >
                 <Typography component="h1" variant="h5">
-                    Login
+                    Adicione Acidente
                 </Typography>
                 <form onSubmit={handleLogin}>
                     <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
-                        <InputLabel htmlFor="username">Username</InputLabel>
+                        <InputLabel htmlFor="username">Veiculo 1</InputLabel>
                         <Input
                             id="username"
                             name="username"
@@ -75,7 +75,51 @@ function CRUDE() {
                         />
                     </FormControl>
                     <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
-                        <InputLabel htmlFor="password">Password</InputLabel>
+                        <InputLabel htmlFor="password">Veiculo 2</InputLabel>
+                        <Input
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </FormControl>
+                    <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
+                        <InputLabel htmlFor="password">Veiculo 3</InputLabel>
+                        <Input
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </FormControl>
+                    <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
+                        <InputLabel htmlFor="password">Data</InputLabel>
+                        <Input
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </FormControl>
+                    <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
+                        <InputLabel htmlFor="password">Localizacao</InputLabel>
+                        <Input
+                            id="password"
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </FormControl>
+                    <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
+                        <InputLabel htmlFor="password">Numero de feridos</InputLabel>
                         <Input
                             id="password"
                             name="password"
