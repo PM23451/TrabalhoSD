@@ -8,5 +8,5 @@ export class CrashesService {
     async findAll(): Promise<any[]> {
         return this.prisma.crash.findMany();
     }
-
 }
+
