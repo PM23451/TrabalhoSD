@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
+import { UuidFactory } from '@nestjs/core/inspector/uuid-factory';
 
 @Injectable()
 export class CrashesService {
@@ -9,26 +10,36 @@ export class CrashesService {
         return this.prisma.crash.findMany();
     }
 
-    async insertCrash(crash: any): Promise<any> {
+    async create(crash: any): Promise<any> {
+        console.log("Crash Service");
+        console.log(crash);
+        if (!crash.collisionId) {
+            //Procurar o ultimo id
+            const crashes = await this.findAll();
+            const lastId = crashes[crashes.length - 1].collisionId;
+            if(lastId == undefined) {
+                crash.collisionId = 1;
+            } else {
+                crash.collisionId = lastId + 1;
+            }
+        }
+        console.log("Crash Service");
+        console.log(crash);
         return this.prisma.crash.create({
-            data: crash,
+            data: crash
         });
     }
 
-    async deleteCrash(crashId: number): Promise<any> {
+    async delete(id: number): Promise<any> {
         return this.prisma.crash.delete({
-            where: {
-                id: crashId,
-            },
+            where: { collisionId: id }
         });
     }
 
-    async updateCrash(crashId: number, crash: any): Promise<any> {
+    async update(id: number, crash: any): Promise<any> {
         return this.prisma.crash.update({
-            where: {
-                id: crashId,
-            },
-            data: crash,
+            where: { collisionId: id },
+            data: crash
         });
     }
 }

@@ -9,4 +9,5 @@ export class TeachersController {
     async findAll() {
         return this.teachersService.findAll();
     }
+
 }

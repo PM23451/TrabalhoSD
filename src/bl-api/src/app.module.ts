@@ -9,5 +9,15 @@ import { CrashesService } from "./crashes/crashes.service";
   controllers: [AppController],
   providers: [AppService, CrashesService],
 })
-export class AppModule {}
+export class AppModule {
+  //Permitir Access-Control-Allow-Origin
+    configure(consumer) {
+        consumer.apply((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', '*');
+        res.header('Access-Control-Allow-Headers', '*');
+        next();
+        }).forRoutes('*');
+    }
+}
 

@@ -38,7 +38,7 @@ function Registar() {
             // Check if the request was successful (status code 200-299)
             if (response.ok) {
                 console.log("Data sent successfully!");
-                // Optionally, you can redirect the user or perform other actions upon successful submission
+                window.location.href = "/login";
             } else {
                 console.error("Failed to send data to the server");
             }

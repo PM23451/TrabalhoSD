@@ -39,10 +39,12 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 setToken(data);
-                // Lógica para tratamento de sucesso, por exemplo, salvar token no estado ou redirecionar para outra página
+                document.cookie = "token=" + data.token;
+                window.location.href = "/listar-crash";
             } else {
                 // Lógica para tratamento de erro
                 console.error("Erro ao fazer login");
+                alert("Erro ao fazer login");
             }
         } catch (error) {
             console.error("Erro ao fazer login:", error);

@@ -1,7 +1,8 @@
 import TopTeams from "../Menus/TopTeams";
 import Login from "../Menus/Login";
 import Registar from "../Menus/Registar";
-import CRUDE from "../Menus/CRUDE";
+import InserirCrash from "../Menus/InserirCrash";
+import ListarCrash from "../Menus/ListarCrash";
 
 const Sections = [
 
@@ -18,25 +19,18 @@ const Sections = [
     },
 
     {
-        id: "top-teams",
-        label: "Top Teams",
-        content: <TopTeams/>
+        id: "insert-crash",
+        label: "Inserir Crash",
+        content: <InserirCrash/>,
+
     },
 
     {
-        id: "crud",
-        label: "CRUD Crashes",
-        content: <CRUDE/>
-    },
+        id: "listar-crash",
+        label: "Listar Crash",
+        content: <ListarCrash/>,
 
-    {
-        id: "something-else",
-        label: "Something Else",
-        content: <h1>Something else - Work in progresss</h1>
     }
-
-
-
 ];
 
 export default Sections;
